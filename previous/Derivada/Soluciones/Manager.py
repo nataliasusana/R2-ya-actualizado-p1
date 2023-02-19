@@ -1,5 +1,5 @@
 from IPython.display import display, Latex
-from termcolor import colored
+from colorama import Fore
 import numpy as np
 
 class Actividad:
@@ -22,11 +22,13 @@ class Actividad:
             if R1 == i:
                 aux=True
         if aux:
-            print(colored("-"*100,"green"))
-            print(colored("Correcto","green"))
+            print(Fore.RESET + 80*'-')
+            print(Fore.GREEN + '¡Tu resultado es correcto!')
+            print(Fore.RESET + 80*'-')
         else:
-            print(colored("-"*100,"red"))
-            print(colored("Tu respuesta es incorrecta, verifica las reglas de la derivacion y vuelve a intentar","red"))
+            print(Fore.RESET + 80*'-')
+            print(Fore.RED + '¡Tu respuesta es incorrecta!, verifica las reglas de la derivacion y vuelve a intentar')
+            print(Fore.RESET + 80*'-')
             
 
             

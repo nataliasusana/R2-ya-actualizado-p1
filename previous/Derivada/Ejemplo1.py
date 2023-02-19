@@ -55,4 +55,4 @@ def Ejemplo1(S,h,t):
 w = interact(Ejemplo1,
              S = widgets.FloatSlider(min=0.1, max=1, step=0.1, value=0.5),
              h = widgets.FloatSlider(min=0.05, max=1, step=0.01, value=0.9),
-             t = widgets.IntSlider(min=0, max=8, step=1, value=0))
+             t = widgets.IntSlider(min=0, max=8, step=1, value=1))
