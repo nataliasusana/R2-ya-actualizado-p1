@@ -1,5 +1,16 @@
 import sympy as sy
 
+def evaluar_expr(tema, ejercicio, respuesta):
+    file_path = './' + tema + '/' + ejercicio + '.txt'
+    with open(file_path, 'r') as file:
+        for line in file:
+            print(line)
+            problema = sy.sympify(line)
+    if problema.equals(respuesta):
+        print('Respuesta correcta')
+    else:
+        print('Revisa tu resultado')
+
 def whatis(expr):
     if isinstance(expr, sy.Basic): # verificar que la expresión sea una expresión de SymPy
         if expr.atoms(sy.Derivative): # verificar si la expresión contiene una derivada
@@ -9,7 +20,7 @@ def whatis(expr):
     else:
         return False # es un sistema de ecuaciones
 
-def verificar_sympy(problema, solucion):
+def evaluar_eqs(problema, solucion):
     # Caso para ODEs/PDEs
     if whatis(problema):
         # Caso para ODEs
