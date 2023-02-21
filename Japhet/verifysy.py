@@ -1,10 +1,13 @@
 import sympy as sy
 
 def evaluar_expr(tema, ejercicio, respuesta):
+    # Se genera el path del archivo que cotiene la solución
+    # del problema
     file_path = './' + tema + '/' + ejercicio + '.txt'
+    # Se abre el archivo y se leen las líneas
     with open(file_path, 'r') as file:
         for line in file:
-            print(line)
+            print(line) #sólo demostrativo para visualizar la entrada del archivo y comparar
             problema = sy.sympify(line)
     if problema.equals(respuesta):
         print('Respuesta correcta')
